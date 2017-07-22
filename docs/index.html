@@ -18,46 +18,78 @@
         <p>RecipeJSON is a format for encoding recipes</p>
         <pre><code class="json">{
   "version": 1,
-  "language": "de", // bcp47
-  "source": "URL",
-  "author": "",
-  "creationDate": "2016-11-29T12:47:03+01:00", // ISO 8601
-  "modificationDate": "2016-11-29T12:47:03+01:00", // ISO 8601
+  "title": "Schinken - Käse - Toast à la brenny",
+  "subtitle": "schnell und einfach mit dem Toaster und der Mikrowelle (mit Grillfunktion)",
   "servings": {
-    "type": "persons | items",
+    "type": "item",
     "count": 1
   },
-  "title": "Some cool title",
-  "subtitle": "Some cool subtitle", // optional
-  "images": ["imageUrl"],
-  "links": ["URL"], // Optional
-  "tags": ["foo", "bar"],
-  "recipes" [
+  "tags": [
+    "Fingerfood",
+    "Mikrowelle",
+    "Studentenküche",
+    "einfach",
+    "Snack",
+    "Schnell",
+    "Resteverwertung"
+  ],
+  "recipes": [
     {
-      "title": "Some cool title",
-      "subtitle": "Some cool subtitle", // optional
-      "images": ["imageUrl"], // Optional
       "ingredient": [
         {
-          "unit": "liter",
-          "amount": 1,
-          "name": "Foo bar",
-          "attributes": [""] // ganz
+          "name": "Toastbrot",
+          "unit": "Scheibe/n",
+          "amount": 2,
+          "attributes": [
+            "Sandwichtoast"
+          ]
+        },
+        {
+          "name": "Schmelzkäse",
+          "unit": "Scheibe/n",
+          "amount": 2
+        },
+        {
+          "name": "Schinken",
+          "unit": "Scheibe/n",
+          "amount": 2,
+          "attributes": [
+            "gekochter"
+          ]
         }
       ],
-      "instructions": [
+      "directions": [
         {
-          "time": "P3Y6M4DT12H30M5S", // optional ISO 8601
-          "text": "Waschen Sie den Weizen",
-          "images": ["imageUrl"], // Optional
-          "ingredients": [],
-          "result": "", // optional
-          "amount": 1,
-          "name": "Foo bar"
-        }
+          "time": "P1M",
+          "text": "Toastbrot rösten",
+          "ingredients": ["Toastbrot"],
+          "result": "Toastbrot geröstet",
+        },
+        {
+          "time": "P1M",
+          "text": "Toastbrot mit Schmelzkäse und Schinken belegen",
+          "ingredients": ["Toastbrot geröstet", "Schmelzkäse", "Schinken"],
+          "result": "Toast mit Schinken und Käse",
+        },
+        {
+          "time": "P1M",
+          "text": "Toastbrot mit Käse Schmelzkäse, Schinken und Schmelzkäse mit Toastbrot belegen",
+          "ingredients": ["Toast mit Käse und Schinken", "Schmelzkäse"],
+          "result": "Toast mit Käse und Schinken und Käse",
+        },
+        {
+          "time": "P1M",
+          "text": "Toastbrot mit Käse Schmelzkäse und Schinken im Mikrowellenherd grillen",
+          "ingredients": ["Toast mit Käse und Schinken und Käse"],
+          "result": "",
+        },
       ]
     }
-  ]
+  ],
+  "language": "de",
+  "source": "http://www.chefkoch.de/rezepte/1085491214404371/Schinken-Kaese-Toast-a-la-brenny.html",
+  "author": "brenny",
+  "creationDate": "2008-06-26T22:43:17+02:00"
 }</code></pre>
       </article>
     </section>
