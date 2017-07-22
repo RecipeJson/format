@@ -6,6 +6,7 @@
     <title>Chefmaker</title>
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
@@ -15,7 +16,52 @@
       <article class="splash">
         <h1><span class="fkin">R</span>ecipe<span class="fkin">J</span>SON</h1>
         <p>RecipeJSON is a format for encoding recipes</p>
+        <pre><code class="json">{
+  "version": 1,
+  "language": "de", // bcp47
+  "source": "URL",
+  "author": "",
+  "creationDate": "2016-11-29T12:47:03+01:00", // ISO 8601
+  "modificationDate": "2016-11-29T12:47:03+01:00", // ISO 8601
+  "servings": {
+    "type": "persons | items",
+    "count": 1
+  },
+  "title": "Some cool title",
+  "subtitle": "Some cool subtitle", // optional
+  "images": ["imageUrl"],
+  "links": ["URL"], // Optional
+  "tags": ["foo", "bar"],
+  "recipes" [
+    {
+      "title": "Some cool title",
+      "subtitle": "Some cool subtitle", // optional
+      "images": ["imageUrl"], // Optional
+      "ingredient": [
+        {
+          "unit": "liter",
+          "amount": 1,
+          "name": "Foo bar",
+          "attributes": [""] // ganz
+        }
+      ],
+      "instructions": [
+        {
+          "time": "P3Y6M4DT12H30M5S", // optional ISO 8601
+          "text": "Waschen Sie den Weizen",
+          "images": ["imageUrl"], // Optional
+          "ingredients": [],
+          "result": "", // optional
+          "amount": 1,
+          "name": "Foo bar"
+        }
+      ]
+    }
+  ]
+}</code></pre>
       </article>
     </section>
   </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </html>
