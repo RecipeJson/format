@@ -1,0 +1,95 @@
+                           The RecipeJSON Format
+
+Abstract
+
+   RecipeJSON is a recipe data interchange format based on JavaScript
+   Object Notation (JSON).  It defines a type of JSON objects and
+   the manner in which they are combined to represent data about
+   recipes features, their properties, and their spatial extents.
+
+Status of This Memo
+
+   This is currently in the draft stage and very much subject to change. 
+   
+   This first draft was created on 24.07.2017.
+
+Example
+
+    A RecipeJSON:
+
+    {
+        "version": 1,
+        "title": "Schinken - Käse - Toast à la brenny",
+        "subtitle": "schnell und einfach mit dem Toaster und der Mikrowelle (mit Grillfunktion)",
+        "servings": {
+            "type": "item",
+            "count": 1
+        },
+        "tags": [
+            "Fingerfood",
+            "Mikrowelle",
+            "Studentenküche",
+            "einfach",
+            "Snack",
+            "Schnell",
+            "Resteverwertung"
+        ],
+        "recipes": [
+            {
+            "ingredient": [
+                {
+                    "name": "Toastbrot",
+                    "unit": "Scheibe/n",
+                    "amount": 2,
+                    "attributes": [
+                        "Sandwichtoast"
+                    ]
+                },
+                {
+                    "name": "Schmelzkäse",
+                    "unit": "Scheibe/n",
+                    "amount": 2
+                },
+                {
+                    "name": "Schinken",
+                    "unit": "Scheibe/n",
+                    "amount": 2,
+                    "attributes": [
+                        "gekochter"
+                    ]
+                }
+            ],
+            "directions": [
+                {
+                    "time": "P1M",
+                    "text": "Toastbrot rösten",
+                    "ingredients": ["Toastbrot"],
+                    "result": "Toastbrot geröstet",
+                },
+                {
+                    "time": "P1M",
+                    "text": "Toastbrot mit Schmelzkäse und Schinken belegen",
+                    "ingredients": ["Toastbrot geröstet", "Schmelzkäse", "Schinken"],
+                    "result": "Toast mit Schinken und Käse",
+                },
+                {
+                    "time": "P1M",
+                    "text": "Toastbrot mit Käse Schmelzkäse und Schinken im Mikrowellenherd grillen",
+                    "ingredients": ["Toast mit Käse und Schinken und Käse"],
+                    "result": "",
+                },
+            ]
+            }
+        ],
+        "language": "de",
+        "source": "http://www.chefkoch.de/rezepte/1085491214404371/Schinken-Kaese-Toast-a-la-brenny.html",
+        "author": "brenny",
+        "creationDate": "2008-06-26T22:43:17+02:00"
+    }
+
+Authors' Addresses
+
+   Leon Kunert
+   CELLULAR GmbH
+
+   Email: info@leonkunert.de
