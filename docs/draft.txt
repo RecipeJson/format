@@ -135,12 +135,43 @@ Example
     The Recipe envelope has to contain a field `recipes` containing a list of recipe objects.
     The recipe object is defined in 1.2.0.
 
-1.0.6
+1.0.6 Subtitle
+    
+    The Recipe envelope may contain a field `subtitle` as string.
+    The subtitle should describe the recipe in more detail than the title.
+
+1.0.7 Source
+
+    The Recipe envelope may contain a field `source` as string.
+    The source has to contain a URL to the source.
+
+1.0.8 Author
+
+    The Recipe envelope may contain a field `author` as string.
+    The author may contain an email address or username.
+
+1.0.9 Images
+
+    The Recipe envelope may contain a field `images` as a list of strings. 
+    The images have to be URLs and should display the full recipe with all subrecipes.
+
+1.0.10 Links
+
+    The Recipe envelope may contain a field `links` as a list of strings. 
+    The images have to be URLs and should be links to websites containing relevant infomation for this recipe.
+
+1.0.11 Tags
+
+    The Recipe envelope may contain a field `tags` as a list of strings. 
+    The tags should describe the recipe and may be used for search.
 
 1.2.0 Recipe object definition
+
+    
 
 Authors' Addresses
 
    Leon Kunert
+   info@leonkunert.de
 
-   Email: info@leonkunert.de
+   Felix Böösch
