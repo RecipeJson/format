@@ -1,2 +1,2 @@
 # RecipeJson
-A json recipe format
+The formal definition of the RecipeJSON format

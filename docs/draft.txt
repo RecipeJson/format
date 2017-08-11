@@ -10,8 +10,9 @@ Abstract
 Status of This Memo
 
    This is currently in the experimental stage and very much subject to change.
-   This first draft was created from the 20.07.2017 to the 22.07.2017 at the "Code Kombüse" Hackathon and 
+   The first draft was created from the 2017-07-20 to the 2017-07-22 at the "Code Kombüse" Hackathon and 
    is my first formal definition, so don't hit me for it.
+   The second draft was created on 2017-08-11.
 
 Example
 
@@ -61,22 +62,25 @@ Example
                 ],
                 "directions": [
                     {
+                        "type": "cooking",
                         "duration": "P1M",
                         "text": "Toastbrot rösten",
                         "ingredients": ["Toastbrot"],
-                        "result": "Toastbrot geröstet",
+                        "result": ["Toastbrot geröstet"],
                     },
                     {
+                        "type": "preparation",
                         "duration": "P1M",
                         "text": "Toastbrot mit Schmelzkäse und Schinken belegen",
                         "ingredients": ["Toastbrot geröstet", "Schmelzkäse", "Schinken"],
-                        "result": "Toast mit Schinken und Käse",
+                        "result": ["Toast mit Schinken und Käse"],
                     },
                     {
+                        "type": "cooking",
                         "duration": "P1M",
                         "text": "Toastbrot mit Käse Schmelzkäse und Schinken im Mikrowellenherd grillen",
                         "ingredients": ["Toast mit Käse und Schinken und Käse"],
-                        "result": "",
+                        "result": [""],
                     },
                 ]
             }
@@ -254,36 +258,51 @@ Example
 
     The Direction objects of a RecipeJSON have to contain the following fields:
 
-    `text`
+    `type`, `text`
 
     it may also contain the following fields:
 
     `duration`, `images`, `ingredients`, `result`
 
-1.4.1 Text
+1.4.1 Type
 
-    A Direction object may contain a field `text` as string.
+    A Direction object has to contain a field `type` as string.
+    The type can be either `preparation` marking the direction step as a preparation step 
+    or `cooking` marking it a step cooking something.
+
+1.4.2 Text
+
+    A Direction object has to contain a field `text` as string.
     The text should discribe the actions that have to be taken in this direction.
 
-1.4.2 Duration
+1.4.3 Duration
 
     A Direction object may contain a field `duration` as string.
     The duration should be a ISO 8601 duration string.
 
-1.4.3 Images
+1.4.4 Images
 
     A Direction object may contain a field `images` as a list of strings. 
     The images have to be URLs and should display just the direction.
 
-1.4.4 Ingredients
+1.4.5 Ingredients
 
     A Direction object may contain a field `ingredients` as a list of strings.
     The strings should reference either on of the ingredients or a result from a previous direction step.
 
-1.4.5 Result
+1.4.6 Result
 
-    A Direction object may contain a field `result` as string.
-    The result may be used in the ingredients for a direction, or can be omitted.
+    A Direction object may contain a field `result` as a list of strings.
+    The results may be used in the ingredients for directions, or can be omitted.
+
+===============================================================================================
+
+Changes:
+
+    Second Draft 2017-08-11
+
+    - `result` in the Direction object is not a simple string anymore but a list of strings instead.
+    - A Direction object must contain a new field `type` that can either have the value `preparation` or the value `cooking` marking it either a manual preparation step or a cooking step.
 
 ===============================================================================================
 
@@ -293,3 +312,6 @@ Authors' Addresses
    info@leonkunert.de
 
    Felix Böösch
+
+   Carlos Freund
+   carlosfreund@gmail.com
